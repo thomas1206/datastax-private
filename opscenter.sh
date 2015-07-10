@@ -9,7 +9,7 @@ NODE_COUNT=18
 echo "127.0.0.1 ${HOSTNAME}" >> /etc/hosts
 echo "127.0.0.1 localhost.localdomain localhost" >> /etc/hosts
 echo "10.0.0.5  opcvm" >> /etc/hosts
-echo '*/1 * * * * service walinuxagent start' > cronjob
+echo '*/1 * * * * sudo service walinuxagent start' > cronjob
 crontab cronjob
 for i in $(seq 0 1 $CLUST_COUNT)
 do
